@@ -1,0 +1,37 @@
+<nav>
+    <style>
+    body {margin:0}
+ body{
+            background:#555;
+            color:black;
+            font-family: "Times New Roman", Times, serif;
+          }
+.icon-bar {
+  width: 140px;
+  background-color: #555;
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 15px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 36px;
+}
+
+.icon-bar a:hover {
+  background-color: #000;
+}
+
+.active {
+  background-color: pink;}
+
+</style>
+    <div class="icon-bar">
+  <a   href="{% url 'vacations' %}"><i class="fa fa-home"> vacations</i></a>
+  <a  href="{% url 'workingusers'%}"><i class="fa fa-group"> working user</i></a>
+  <a  href="{% url 'requestvacation'%}"><i class="fa fa-send"> Request Vacation</i></a>
+  <a href="{% url 'showcurrentmonth'%}"><i class="fa fa-calendar"> current month</i></a>
+    </div>
+</nav>

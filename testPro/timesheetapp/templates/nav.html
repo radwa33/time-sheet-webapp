@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block body %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav>
+    <style>
+    body {margin:0}
+ body{
+            background:#555;
+            color:black;
+            font-family: "Times New Roman", Times, serif;
+          }
+.nav-link {
+  width: 190px;
+  background-color: pink;
+}
+.nav-link a {
+  display: block;
+  text-align: center;
+  padding: 18px;
+  transition: all 0.3s ease;
+  color: #555;
+  font-size: 40px;
+}
+
+.nav-link a:hover {
+  background-color: #555;
+}
+.container-fluid{
+width:1500px;
+padding: 1px;
+text-align: center;
+background-color: #555;
+color:white;
+}
+ .container-fluid a:hover{background-color: #555;
+}
+.active {
+  background-color: pink;}
+
+</style>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <nav>
+  <ul>
+    <ul class="nav nav-tabs">
+        <li><a class="nav-link" href="{% url 'home' %}"><i class="fa fa-home">Home</i></a></li>
+    <li><a  class="nav-link" href="{% url 'vacations' %}"><i class="fa fa-home"> vacations</i></a></li>
+      <li><a class="nav-link" href="{% url 'workingusers'%}"><i class="fa fa-group"> working user</i></a></li>
+    <li><a class="nav-link" href="{% url 'requestvacation'%}"><i class="fa fa-send"> Request Vacation</i></a></li>
+   <li> <a class="nav-link" href="{% url 'showcurrentmonth'%}"><i class="fa fa-calendar"> current month</i></a></li>
+    </ul>
+    </ul>
+  </ul>
+</nav>
+
+    <ul class="nav navbar-nav navbar-right">
+       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user"> {{ user.username }}</i><span ></span></a>
+        <ul class="dropdown-menu">
+          <li><a  href="{% url 'signup' %}"><span class="glyphicon glyphicon-user"></span>Register</a></li>
+          <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>
+       </li>
+    </ul>
+  </div>
+</nav>
+</body>
+</html>
+{% endblock %}

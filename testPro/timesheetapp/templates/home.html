@@ -1,0 +1,52 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} home {% endblock %}
+
+{% block body %}
+<head>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+ {% include 'nav.html' %}
+
+<body>
+
+<center>
+    <br><br><br>
+    <div id="stopwatch">
+        <div id="options" style="margin: auto;width: fit-content;">
+             <p> current today date  </p>
+            <div  id="date" ><p> current today date  </p>
+            </div>
+            <body  onload="startTime('{{current_time}}')">  </body>
+            <button class="btn" id="start" title="start" onclick="startTimer()"><i class="fa fa-play-circle"> start</i> </button>
+            <button class="btn" id="start pause" title="start pause" onclick="startpause()"><i class="fa fa-stop-circle"> Resume</i></button>
+            <button class="btn" id="stop" title="stop" onclick="stopTimer()"><i class="fa fa-pause-circle"> Pause</i></button>
+            <button class="btn" id="End" title="End" onclick="resetTimer()"><i class="fa fa-times-circle"> End</i></button>
+        <div id="timer">
+            <span class="time" id="hours">00</span>
+            <span class="time" id="minutes">00</span>
+            <span class="time" id="seconds">00</span>
+        </div>
+
+            <div id="main">
+                <div  id="startt" ><i> start time </i>
+                </div>
+                <div  id="laps" ><i>stop times  </i>
+                </div>
+                <div  id="back" ><i>back times</i>
+                </div>
+                <div  id="endd"><i>end time</i>
+                </div>
+                <div id="pause"><i>total working time </i>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+</body>
+
+{% endblock %}
